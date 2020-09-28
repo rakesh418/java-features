@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -43,8 +45,8 @@ public class JavaStreamExample {
 //        Product a = productsList.stream().max((product1,product2)->product1.price>product2.price?1:-1).get();
 //        Product a = productsList.stream().min((product1,product2)->product1.price>product2.price?1:-1).get();
 //        Long count = productsList.stream().filter(x->x.price>25000).count();
-
-        System.out.println(count);
-
+//        Set<Product> productSet = productsList.stream().collect(Collectors.toSet());
+        Map<String,Float> productMap = productsList.stream().collect(Collectors.toMap(p->p.name,v->v.price));
+        System.out.println(productMap);
     }
 }  
